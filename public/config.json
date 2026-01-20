@@ -13,25 +13,30 @@
     }
   },
 
-  "arguments": {
-    "execute": {
- "inArguments":[{"country":"Germany"}],
-      "outArguments": [
-        { "isWithinWindow": "" },
-        { "currentHour": "" }
-      ],
-      "url": "https://daytime-window-check.vercel.app/activity/execute",
-      "verb": "POST",
-      "body": "",
-      "header": "",
-      "format": "json",
-      "useJwt": false,
-      "timeout": 20000,
-      "retryCount": 3,
-      "retryDelay": 1000,
-      "concurrentRequests": 6
-    }
-  },
+"arguments": {
+  "execute": {
+    "inArguments": [
+      {
+        "country": "{{Contact.Attribute.Default.Country}}"
+      }
+    ],
+    "outArguments": [
+      { "isWithinWindow": "" },
+      { "currentHour": "" }
+    ],
+    "url": "https://daytime-window-check.vercel.app/activity/execute",
+    "verb": "POST",
+    "body": {},
+    "header": {},
+    "format": "json",
+    "useJwt": true,
+    "timeout": 20000,
+    "retryCount": 3,
+    "retryDelay": 1000,
+    "concurrentRequests": 6
+  }
+},
+
 
   "configurationArguments": {
     "save": {
@@ -96,6 +101,7 @@
     }
   }
 }
+
 
 
 
